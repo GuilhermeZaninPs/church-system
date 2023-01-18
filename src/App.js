@@ -1,12 +1,17 @@
 import Logo from './images/logo.png'
-import Image from './Style'
+import { Home } from './Style'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Image src={Logo} alt='Logo'></Image>
-    </div>
+    <Home>
+      <img src={Logo} alt='Logo'></img>
+      <div>
+        <h1>DEPARTAMENTO</h1>
+        <input type='text'></input>
+        <button>Iniciar</button>
+      </div>
+    </Home>
   );
 }
 

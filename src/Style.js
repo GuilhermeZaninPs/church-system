@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Home = styled.div`
+export const HomeStyle = styled.div`
     max-width: 100%;
     display: flex;
     justify-content: center;

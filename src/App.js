@@ -1,17 +1,19 @@
-import Logo from './images/logo.png'
-import { Home } from './Style'
-import './App.css';
+// import './App.css';
+
+// import  Home from './components/Home';
+import Rota from './components/Rota.js'
 
 function App() {
   return (
-    <Home>
-      <img src={Logo} alt='Logo'></img>
-      <div>
-        <h1>DEPARTAMENTO</h1>
-        <input type='text'></input>
-        <button>Iniciar</button>
-      </div>
-    </Home>
+    <>
+    {/* Home page it's where all leaders can select their respective department */}
+    {/* <Home></Home> */}
+
+    {/* Shift page it's where the leaders can create a new shift or edit a existing rota for all department. */}
+    <Rota></Rota>
+
+  </>
+
   );
 }
 

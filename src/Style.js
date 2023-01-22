@@ -4,14 +4,15 @@ export const HomeStyle = styled.div`
     max-width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 20%;
 
     img {
-        width: 800px;
+        width: 350px;
     }
     div {
         display: flex;
         flex-direction: column;
+        margin-left: 50px;
     }
     h1 {
         color: #10403b;
@@ -31,17 +32,45 @@ export const HomeStyle = styled.div`
         border-radius: 5px;
         background-color: #10403b;
         color: white; 
-
     }
 
     @media (max-width: 414px) {
+        display: flex;
+        align-items: center;
         flex-direction: column;
+        margin-top: 50%;
         width: 100%;
         img {
-            width: 500px;
-            margin-top: -100px;
+            width: 200px;
         }
       }
 `
 
+export const RotaStyle = styled.div `
+      .headerBack {
+        display: flex;
 
+      }
+      .container-content {  
+          display: flex;
+          justify-content: space-around;
+      }
+      padding: 30px 40px;
+
+      .formCreate {
+        display: flex;
+        flex-direction: column;
+      }
+      .names {
+        display: flex;
+        justify-content: space-between;
+        }
+      button {
+        height: 50px;
+      }
+`
+
+
+export const LogoStyle = styled.img `
+      width: 200px;
+`

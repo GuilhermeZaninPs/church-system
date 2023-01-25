@@ -33,7 +33,9 @@ export const HomeStyle = styled.div`
         background-color: #10403b;
         color: white; 
     }
-
+    button:hover {
+      background-color: #185f58;
+    }
     @media (max-width: 414px) {
         display: flex;
         align-items: center;
@@ -60,14 +62,28 @@ export const RotaStyle = styled.div `
       .formCreate {
         display: flex;
         flex-direction: column;
+        
       }
       .names {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+
+
         }
-      button {
-        height: 50px;
-      }
+        #btnRota {
+          margin-top: 10px;
+          width: 255px;
+          height: 35px;
+          border: 1px solid black;
+          border-radius: 5px;
+          background-color: #10403b;
+          color: white; 
+        }
+        #btnRota:hover {
+          background-color: #185f58;
+        }
 `
 
 

@@ -42,7 +42,7 @@ const  Home = () => {
 
                             return departTerm && departmentName.startsWith(departTerm) && departmentName !== departTerm
                         })
-                        .map((item) => <div onClick={() => onStart(item)} className='dropdown-row' key={item}>
+                        .map((item) => <div onClick={() => onStart(item)} className='dropdown-row' key={item} style={{cursor: "pointer"}}>
                             {item}
                         </div>)}
                     </div>

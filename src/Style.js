@@ -6,10 +6,10 @@ export const HomeStyle = styled.div`
     justify-content: center;
     margin-top: 20%;
 
-    img {
+    .logo {
         width: 350px;
     }
-    div {
+    .container-home-form {
         display: flex;
         flex-direction: column;
         margin-left: 50px;
@@ -22,28 +22,45 @@ export const HomeStyle = styled.div`
         width: 250px;
         height: 30px;
         border: 1px solid black;
-        border-radius: 5px; 
+        border-radius: 5px 5px 0 0; 
+        padding-left: 5px;
     }
     button {
         margin: 15px 0;
-        width: 255px;
+        width: 250px;
         height: 35px;
-        border: 1px solid black;
+        border: .5px solid black;
         border-radius: 5px;
+        border-bottom-style: none;
+
         background-color: #10403b;
         color: white; 
     }
     button:hover {
       background-color: #185f58;
     }
+
+    .dropdown {
+      width: 250px;
+      margin-left: 0;
+      text-align: left;
+      border: 1px solid black;
+      border-top-style: none;
+      border-radius: 0 0 5px 5px;
+
+      margin-top: -66px;
+      z-index: 1;
+      background-color: white;
+      padding-left: 5px;
+    }  
     @media (max-width: 414px) {
         display: flex;
         align-items: center;
         flex-direction: column;
         margin-top: 50%;
         width: 100%;
-        img {
-            width: 200px;
+        .logo {
+            width: 250px;
         }
       }
 `

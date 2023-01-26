@@ -9,21 +9,23 @@ import {
 import Home from './pages/Home';
 import Rota from './pages/Rota.js'
 
+import  DepartProvider  from "./context/DepartContext";
+
 function App() {
   return (
-    <>
-    <Router>
-      <Routes>
-          {/* Home page it's where all leaders can select their respective department */}
-          <Route path="/" element={ <Home /> } />
-         
-          {/* Shift page it's where the leaders can create a new shift or edit a existing rota for all department. */}
-          <Route path="/rota" element={ <Rota /> } />
-      </Routes>
-    </Router>
-
-  </>
-
+    <DepartProvider>
+      <>
+      <Router>
+        <Routes>
+            {/* Home page it's where all leaders can select their respective department */}
+            <Route path="/" element={ <Home /> } />
+          
+            {/* Shift page it's where the leaders can create a new shift or edit a existing rota for all department. */}
+            <Route path="/rota" element={ <Rota /> } />
+        </Routes>
+      </Router>
+      </>
+    </DepartProvider>
   );
 }
 

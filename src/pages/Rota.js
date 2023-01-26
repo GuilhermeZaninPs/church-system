@@ -3,13 +3,18 @@ import { NamesModal, DatesModal } from "../components/Modals"
 import Logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 
+import { DepartContext } from '../context/DepartContext';
+import { useContext } from "react";
+
+
 const Rota = () => {
+  
   return (
     <>
       <RotaStyle>
         <header className="headerBack">
           <LogoStyle src={Logo} alt="Logo"></LogoStyle>
-          <h1 className="text-[34px] font-semibold ml-[20px]">Bem vindo Diácono</h1>
+          <h1 className="text-[34px] font-semibold ml-[20px]">Bem vindo </h1>
         </header>
         <Link to='/' >
           <h4 className="text-[24px] font-semibold">Voltar</h4>

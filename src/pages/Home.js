@@ -6,7 +6,7 @@ import { HomeStyle } from '../Style'
 
 
 const  Home = () => {
-    const {departList, setChoose} = useContext(DepartContext)
+    const {departList} = useContext(DepartContext)
     
     const [department, setDepartment] = useState('');
 
@@ -33,19 +33,18 @@ const  Home = () => {
                     }
                     
                     <div className='dropdown'>
-                        {departList
-                        .filter((item) => {
+                        {departList.filter((item) => {
                             const departTerm = department.toLowerCase();
                             const departmentName = item.name.toString().toLowerCase()
                     
                             return departTerm && departmentName.startsWith(departTerm) && departmentName !== departTerm
                         })
-                        .map((item) => {
+                        .map((item) => (
                             <div onClick={() => onStart(item.name)} className='dropdown-row' key={item.id} style={{cursor: "pointer"}}>
                                 {item.name}
                             </div>
                             
-                        })}
+                        ))}
                         
                     </div>
                 </div>

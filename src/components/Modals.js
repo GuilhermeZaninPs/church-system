@@ -6,7 +6,7 @@ export const NamesModal = () => {
       <div
         className="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
         id="namesModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="namesModal"
         aria-modal="true"
         role="dialog"
@@ -28,7 +28,7 @@ export const NamesModal = () => {
               ></button>
             </div>
             <div className="modal-body relative p-4">
-              <input type='text' classNameName="border-[2px] px-[5px] h-8" placeholder="Digite um nome"></input>
+              <input type='text' className="border-[2px] px-[5px] h-8" placeholder="Digite um nome"></input>
             </div>
             <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
               <button
@@ -59,7 +59,7 @@ export const DatesModal = () => {
         <div
             className="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
             id="datesModal"
-            tabindex="-1"
+            tabIndex="-1"
             aria-labelledby="datesModal"
             aria-modal="true"
             role="dialog"
@@ -81,7 +81,7 @@ export const DatesModal = () => {
                 ></button>
                 </div>
                 <div className="modal-body relative p-4">
-                <input type='text' classNameName="border-[2px] px-[5px] h-8" placeholder="Digite um nome"></input>
+                <input type='text' className="border-[2px] px-[5px] h-8" placeholder="Digite um nome"></input>
                 </div>
                 <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
                 <button

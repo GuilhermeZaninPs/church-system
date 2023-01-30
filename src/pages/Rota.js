@@ -8,13 +8,21 @@ import { useContext } from "react";
 
 
 const Rota = () => {
+  const {departList} = useContext(DepartContext)
+  console.log(departList)
   
   return (
     <>
       <RotaStyle>
         <header className="headerBack">
           <LogoStyle src={Logo} alt="Logo"></LogoStyle>
-          <h1 className="text-[34px] font-semibold ml-[20px]">Bem vindo </h1>
+          <h1 className="text-[34px] font-semibold ml-[20px]" >Bem vindo { departList
+          .map((item) => (
+            item.status.toString() === 'true' ? item.name : ''
+          )
+          
+          /* (item.name + item.status.toString()) */ )} </h1>
+          
         </header>
         <Link to='/' >
           <h4 className="text-[24px] font-semibold">Voltar</h4>

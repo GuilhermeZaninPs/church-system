@@ -4,34 +4,40 @@ export const DepartContext = createContext({})
 
 export const DepartProvider = ({ children }) => {
 
-    const [choose, setChoose] = useState(false)
+    // https://egghead.io/lessons/react-redux-react-counter-example
+    // https://egghead.io/courses/building-react-applications-with-idiomatic-redux
 
-    const departList = [{
+    // check those link above to learn how to use redux reducer
+    const status = false;
+ 
+    const [departList, setDepartList] = useState([
+        {
             'name': 'Diaconato',
             'id': 0,
-            'wasChoose': choose
+            'status': status,
         }, {
             'name': 'Ancionato',
             'id': 1,
-            'wasChoose': choose
+            'status': status,
         },{
             'name': 'Louvor',
             'id': 2,
-            'wasChoose': choose
+            'status': status,
         },{
             'name': 'Ministério infantil',
             'id': 3,
-            'wasChoose': choose
+            'status': status,
         },{
             'name': 'Ministério pessoal',
             'id': 4,
-            'wasChoose': choose
+            'status': status,
         },
-    ]
+    ])
+   
 
 
     return (
-        <DepartContext.Provider value={{departList, choose, setChoose}}>{ children }</DepartContext.Provider>
+        <DepartContext.Provider value={{departList, setDepartList}}>{ children }</DepartContext.Provider>
     )
 }
 export default DepartProvider;

@@ -11,10 +11,12 @@ const  Home = () => {
     const [department, setDepartment] = useState('');
 
     
-    function onStart (departTerm) {
+    function onSelectItem ( departTerm ) {
         setDepartment(departTerm)
     }        
-
+    function onClickSelected () {
+        console.log(departList)
+    }
     function onChange(event) {
         setDepartment(event.target.value)
     }
@@ -28,24 +30,24 @@ const  Home = () => {
                     {department === '' 
                         ? <button>Iniciar</button> 
                         : <Link to='/rota'>
-                            <button onClick={() => onStart(department)}>Iniciar</button>
+                            <button onClick={() => onClickSelected()}>Iniciar</button>
                         </Link> 
                     }
                     
                     <div className='dropdown'>
                         {departList
                         .filter((item) => {
-                            const departTerm = department.toLowerCase();
+                            const departTerm = department?.toLowerCase();
                             const departmentName = item.name?.toString().toLowerCase()
                     
-                            return departTerm && departmentName?.startsWith(departTerm) && departmentName !== departTerm
+                            return departmentName?.startsWith(departTerm) && departTerm && departmentName !== departTerm
                         })
                         .map((item) => (
                             <div onClick={() => {
-                            setDepartList((prevItem) => [...prevItem, {name: item.name, id: item.id + 1, status: !item.status}])
-                            onStart(item.name)
-                            }} className='dropdown-row' key={item.id} style={{cursor: "pointer"}}>
-                                {item.name}
+                                setDepartList((prevItem) => [...prevItem, {name: item.name, id: item.id, status: !item.status}])
+                                onSelectItem(item.name)
+                                }} className='dropdown-row' key={item.id} style={{cursor: "pointer"}}>
+                                    {item.name}
                             </div>
                             
                         ))}

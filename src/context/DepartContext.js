@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import ShortUniqueId from 'short-unique-id';
 
 export const DepartContext = createContext({})
 
@@ -9,27 +10,28 @@ export const DepartProvider = ({ children }) => {
 
     // check those link above to learn how to use redux reducer
     const status = false;
+    const uid = new ShortUniqueId();
  
     const [departList, setDepartList] = useState([
         {
             'name': 'Diaconato',
-            'id': 0,
+            'id': uid(),
             'status': status,
         }, {
             'name': 'Ancionato',
-            'id': 1,
+            'id': uid(),
             'status': status,
         },{
             'name': 'Louvor',
-            'id': 2,
+            'id': uid(),
             'status': status,
         },{
             'name': 'Ministério infantil',
-            'id': 3,
+            'id': uid(),
             'status': status,
         },{
             'name': 'Ministério pessoal',
-            'id': 4,
+            'id': uid(),
             'status': status,
         },
     ])

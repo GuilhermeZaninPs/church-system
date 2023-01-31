@@ -9,19 +9,33 @@ import { useContext } from "react";
 
 const Rota = () => {
   const {departList} = useContext(DepartContext)
-  console.log(departList)
+  
+  const removeItem = (item) => {
+    const res = departList.find(o => o.name === item)
+    for(var i = 0; i < departList.length; i++) {
+      if(departList[i].name === item) {
+          departList.splice(i, 1);
+          break;
+      }
+  }
+    console.log(res)
+  }
+  console.log(removeItem())
+  
   
   return (
     <>
       <RotaStyle>
         <header className="headerBack">
           <LogoStyle src={Logo} alt="Logo"></LogoStyle>
-          <h1 className="text-[34px] font-semibold ml-[20px]" >Bem vindo { departList
-          .map((item) => (
-            item.status.toString() === 'true' ? item.name : ''
-          )
-          
-          /* (item.name + item.status.toString()) */ )} </h1>
+          <h1 className="text-[34px] font-semibold ml-[20px]" >Bem vindo 
+            { departList
+              .map((item) => (
+                item.status.toString() === 'true' ? ' ' + item.name : '' 
+                )
+              )
+            } 
+          </h1>
           
         </header>
         <Link to='/' >

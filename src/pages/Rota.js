@@ -10,7 +10,7 @@ import { useContext } from "react";
 const Rota = () => {
   const {departList} = useContext(DepartContext)
   
-  const removeItem = (item) => {
+ /*  const removeItem = (item) => {
     const res = departList.find(o => o.name === item)
     for(var i = 0; i < departList.length; i++) {
       if(departList[i].name === item) {
@@ -20,7 +20,7 @@ const Rota = () => {
   }
     console.log(res)
   }
-  console.log(removeItem())
+  console.log(removeItem()) */
   
   
   return (

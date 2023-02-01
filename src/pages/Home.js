@@ -5,18 +5,22 @@ import Logo from '../images/logo.png'
 import { HomeStyle } from '../Style'
 
 
+
+
 const  Home = () => {
-    const {departList, setDepartList} = useContext(DepartContext)
+    const {addItem, departList } = useContext(DepartContext)
     
     const [department, setDepartment] = useState('');
-
     
-    function onSelectItem ( departTerm ) {
-        setDepartment(departTerm)
-    }        
-    function onClickSelected () {
+ 
+    const addItemClick = (department) => {
+        addItem(department)
         console.log(departList)
     }
+   /* function onSelectItem ( departTerm ) {
+        setDepartment(departTerm)
+    }   */
+   
     function onChange(event) {
         setDepartment(event.target.value)
     }
@@ -29,12 +33,13 @@ const  Home = () => {
                     <input type='text' onChange={onChange} value={department} ></input>
                     {department === '' 
                         ? <button>Iniciar</button> 
-                        : <Link to='/rota'>
-                            <button onClick={() => onClickSelected()}>Iniciar</button>
+                        : <Link to='/'>
+                            <button onClick={() => addItemClick(department)}>Iniciar</button>
                         </Link> 
                     }
                     
-                    <div className='dropdown'>
+                    {/* remove auto complete form for now. Later I will try again */}
+                    {/* <div className='dropdown'>
                         {departList
                         .filter((item) => {
                             const departTerm = department?.toLowerCase();
@@ -52,7 +57,7 @@ const  Home = () => {
                             
                         ))}
                         
-                    </div>
+                    </div> */}
                 </div>
             </HomeStyle>
         </>

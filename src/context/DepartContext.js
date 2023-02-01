@@ -9,11 +9,13 @@ export const DepartProvider = ({ children }) => {
     // https://egghead.io/courses/building-react-applications-with-idiomatic-redux
 
     // check those link above to learn how to use redux reducer
-    const status = false;
+   
     const uid = new ShortUniqueId();
- 
+    
+    // I will start with an empty array of object
+
     const [departList, setDepartList] = useState([
-        {
+        /* {
             'name': 'Diaconato',
             'id': uid(),
             'status': status,
@@ -33,13 +35,18 @@ export const DepartProvider = ({ children }) => {
             'name': 'Ministério pessoal',
             'id': uid(),
             'status': status,
-        },
+        }, */
     ])
+
+    const addItem = (department) => {
+        setDepartList(prevDepart => [...prevDepart, {departName: department, id: uid()  }])
+        console.log(departList)
+    }
    
 
 
     return (
-        <DepartContext.Provider value={{departList, setDepartList}}>{ children }</DepartContext.Provider>
+        <DepartContext.Provider value={{departList, addItem}}>{ children }</DepartContext.Provider>
     )
 }
 export default DepartProvider;

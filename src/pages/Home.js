@@ -29,7 +29,7 @@ const  Home = () => {
                     <input type='text' onChange={onChange} value={department} ></input>
                     {department === '' 
                         ? <button>Iniciar</button> 
-                        : <Link to='/rota'>
+                        : <Link to='/'>
                             <button onClick={() => onClickSelected()}>Iniciar</button>
                         </Link> 
                     }
@@ -42,9 +42,12 @@ const  Home = () => {
                     
                             return departmentName?.startsWith(departTerm) && departTerm && departmentName !== departTerm
                         })
-                        .map((item) => (
+                        .map((item, index) => (
                             <div onClick={() => {
-                                setDepartList((prevItem) => [...prevItem, {name: item.name, id: item.id, status: !item.status}])
+                                // setDepartList((prevItem) => [...prevItem, {name: item.name, id: item.id, status: !item.status}])
+                                if(item === index) {
+                                    return !item.status
+                                }
                                 onSelectItem(item.name)
                                 }} className='dropdown-row' key={item.id} style={{cursor: "pointer"}}>
                                     {item.name}

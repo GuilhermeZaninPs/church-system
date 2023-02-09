@@ -21,7 +21,7 @@ function App() {
             <Route path="/" element={ <Home /> } />
           
             {/* Shift page it's where the leaders can create a new shift or edit a existing rota for all department. */}
-            <Route path="/rota" element={ <Rota /> } />
+            <Route path="/departments/:name" element={ <Rota /> } />
         </Routes>
       </Router>
       </>

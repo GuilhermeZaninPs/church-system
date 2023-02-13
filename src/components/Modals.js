@@ -1,3 +1,4 @@
+import DatePicker, { Calendar } from "react-multi-date-picker"
 
 
 export const NamesModal = () => {
@@ -81,7 +82,8 @@ export const DatesModal = () => {
                 ></button>
                 </div>
                 <div className="modal-body relative p-4">
-                <input type='text' className="border-[2px] px-[5px] h-8" placeholder="Digite um nome"></input>
+                {/* <input type='date' className="border-[2px] px-[5px] h-8" placeholder="Digite um nome"></input> */}
+                <DatePicker />
                 </div>
                 <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
                 <button

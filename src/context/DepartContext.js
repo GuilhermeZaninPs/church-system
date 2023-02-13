@@ -17,22 +17,27 @@ export const DepartProvider = ({ children }) => {
             'name': 'Diaconato',
             'id': uid(),
             'status': status,
+            'memberName': [],
         }, {
             'name': 'Ancionato',
             'id': uid(),
             'status': status,
+            'memberName': [],
         },{
             'name': 'Louvor',
             'id': uid(),
             'status': status,
+            'memberName': [],
         },{
             'name': 'Ministério infantil',
             'id': uid(),
             'status': status,
+            'memberName': [],
         },{
             'name': 'Ministério pessoal',
             'id': uid(),
             'status': status,
+            'memberName': [],
         },
     ])
    

@@ -4,20 +4,19 @@ import { DepartContext } from "../context/DepartContext";
 import Logo from "../images/logo.png";
 import { HomeStyle } from "../Style";
 
-const AutoComplete = () => {
+const Home = () => {
   const { departList } = useContext(DepartContext);
   const history = useNavigate();
-  
+
   const [inputValue, setInputValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  const [selectedDepart, setSelectedDepart] = useState(null)
-  
-  
-  useEffect(() => {
+  const [selectedDepart, setSelectedDepart] = useState(null);
+
+  /* useEffect(() => {
     if (selectedDepart) {
         history(`/departments/${selectedDepart.name}`);
     }
-    }, [selectedDepart, history]);
+    }, [selectedDepart, history]); */
 
   useEffect(() => {
     if (inputValue === "") {
@@ -39,14 +38,16 @@ const AutoComplete = () => {
 
   function handleSuggestionClick(suggestions) {
     setInputValue(suggestions.name);
-    setSelectedDepart(suggestions)
+    setSelectedDepart(suggestions);
     setSuggestions([]);
   }
 
   function handleButtonClick() {
     if (!selectedDepart) return;
+    if (selectedDepart) {
+      history(`/departments/${selectedDepart.name}`);
+    }
   }
- 
 
   return (
     <>
@@ -64,7 +65,6 @@ const AutoComplete = () => {
             value={inputValue}
           ></input>
           <button onClick={handleButtonClick}>Iniciar</button>
-          
 
           <div className="dropdown">
             {suggestions.length > 0 && (
@@ -73,14 +73,13 @@ const AutoComplete = () => {
                   <li
                     key={suggestion.id}
                     onClick={() => handleSuggestionClick(suggestion)}
-                    style={{cursor: "pointer"}}
+                    style={{ cursor: "pointer" }}
                   >
                     {suggestion.name}
                   </li>
                 ))}
               </ul>
             )}
-            
           </div>
         </div>
       </HomeStyle>
@@ -88,4 +87,4 @@ const AutoComplete = () => {
   );
 };
 
-export default AutoComplete;
+export default Home;

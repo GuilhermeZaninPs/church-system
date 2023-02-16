@@ -73,6 +73,7 @@ const AutoComplete = () => {
                   <li
                     key={suggestion.id}
                     onClick={() => handleSuggestionClick(suggestion)}
+                    style={{cursor: "pointer"}}
                   >
                     {suggestion.name}
                   </li>

@@ -62,13 +62,14 @@ import React, { useEffect, useState, useRef } from "react";
 import { Calendar } from "react-multi-date-picker";
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
 
-const CalendarComponent = () => {
-  const [selectedDates, setSelectedDates] = useState([]);
+const CalendarComponent = ({ setSelectedDates }) => {
+  const [selectedDates, setSelectedDatesState] = useState([]);
 
   // Define the event listener function
   const handleDateSelect = (date) => {
     if (!selectedDates.includes(date)) {
-      setSelectedDates((prevSelectedDates) => [...prevSelectedDates, date]);
+        setSelectedDatesState((prevSelectedDates) => [...prevSelectedDates, date]);
+        setSelectedDates(date)
     }
   };
 
@@ -95,7 +96,7 @@ const CalendarComponent = () => {
     };
   }, [selectedDates]);
 
-  console.log(selectedDates);
+//   console.log(selectedDates);
 
   // Convert selected dates to a comma-separated string
   const datesAsString = selectedDates

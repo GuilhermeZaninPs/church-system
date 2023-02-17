@@ -53,7 +53,10 @@ export const NamesModal = () => {
   );
 };
 
-export const DatesModal = () => {
+export const DatesModal = ({setSelectedDates}) => {
+
+  
+
   return (
 
     <>
@@ -83,7 +86,7 @@ export const DatesModal = () => {
                 </div>
                 <div className="modal-body relative p-4">
                 {/* <input type='date' className="border-[2px] px-[5px] h-8" placeholder="Digite um nome"></input> */}
-                <CalendarComponent />
+                <CalendarComponent setSelectedDates={setSelectedDates}/>
                 </div>
                 <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
                 <button

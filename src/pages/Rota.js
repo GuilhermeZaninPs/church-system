@@ -4,15 +4,17 @@ import Logo from "../images/logo.png";
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import { DepartContext } from '../context/DepartContext';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 
 const Rota = () => {
   const {departList} = useContext(DepartContext)
   const { name } = useParams();
   const history = useNavigate();
-  
+
   const department = departList.find(department => department.name === name);
+
+  const [selectedDates, setSelectedDates] = useState([])
 
   if (!department) {
     history('/');
@@ -75,7 +77,7 @@ const Rota = () => {
             <button id="btnRota">Criar nova escala</button>
           </div>
           <NamesModal />
-          <DatesModal />
+          <DatesModal  setSelectedDates={setSelectedDates}/>
           <div className="grid grid-cols-2 divide-x-2">
             <div className="pr-[20px]">
               <h1 className='text-[30px]	font-semibold'>Nomes cadastrados</h1>
@@ -88,9 +90,11 @@ const Rota = () => {
             <div className="pl-[20px]">
               <h1 className='text-[30px]	font-semibold'>Datas selecionadas</h1>
               <ul>
-                <li>Sabado - 2 de fevereiro</li>
-                <li>Sabado - 9 de fevereiro</li>
-                <li>Sabado - 16 de fevereiro</li>
+                {selectedDates.map((date) => (
+                  <li>{date.toString()}</li>
+                )) 
+
+                }
               </ul>
             </div>
           </div>

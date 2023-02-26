@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import CalendarComponent from "./CalendarComponent";
 
 
@@ -53,9 +54,16 @@ export const NamesModal = () => {
   );
 };
 
-export const DatesModal = ({setSelectedDates}) => {
+export const DatesModal = ({setSelectedDates, onSelectedDates}) => {
 
   
+  const onClickButton = () => {
+    if (onSelectedDates.length === 0) {
+      console.log('array empty')
+    } else {
+      console.log('array not empty')
+    }
+  } 
 
   return (
 
@@ -89,6 +97,7 @@ export const DatesModal = ({setSelectedDates}) => {
                 <CalendarComponent setSelectedDates={setSelectedDates}/>
                 </div>
                 <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                
                 <button
                     type="button"
                     className="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
@@ -99,6 +108,7 @@ export const DatesModal = ({setSelectedDates}) => {
                 <button
                     type="button"
                     className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1"
+                    onClick={onClickButton}
                 >
                     Salvar datas
                 </button>

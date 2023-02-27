@@ -54,14 +54,18 @@ export const NamesModal = () => {
   );
 };
 
-export const DatesModal = ({setSelectedDates, onSelectedDates}) => {
+export const DatesModal = ({setSelectedDates, onSelectedDates, onBtnClicked}) => {
 
   
+
+
   const onClickButton = () => {
-    if (onSelectedDates.length === 0) {
-      console.log('array empty')
+    if (onSelectedDates.length !== 0) {
+      console.log(onSelectedDates)
+      onBtnClicked(true)
     } else {
-      console.log('array not empty')
+      alert('Selecione alguma data')
+      onBtnClicked(false)
     }
   } 
 
@@ -109,6 +113,7 @@ export const DatesModal = ({setSelectedDates, onSelectedDates}) => {
                     type="button"
                     className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1"
                     onClick={onClickButton}
+                    tabIndex="aria-hidden"
                 >
                     Salvar datas
                 </button>

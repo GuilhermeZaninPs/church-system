@@ -15,6 +15,8 @@ const Rota = () => {
   const department = departList.find(department => department.name === name);
 
   const [selectedDates, setSelectedDates] = useState([])
+  const [onBtnClicked, setOnBtnClicked] = useState(false)
+
   
   if (!department) {
     history('/');
@@ -77,7 +79,7 @@ const Rota = () => {
             <button id="btnRota">Criar nova escala</button>
           </div>
           <NamesModal />
-          <DatesModal  setSelectedDates={setSelectedDates} onSelectedDates={selectedDates} />
+          <DatesModal  setSelectedDates={setSelectedDates} onSelectedDates={selectedDates} onBtnClicked={setOnBtnClicked}/>
           <div className="grid grid-cols-2 divide-x-2">
             <div className="pr-[20px]">
               <h1 className='text-[30px]	font-semibold'>Nomes cadastrados</h1>
@@ -89,7 +91,7 @@ const Rota = () => {
             </div>
             <div className="pl-[20px]">
               <h1 className='text-[30px]	font-semibold'>Datas selecionadas</h1>
-              {selectedDates.length !== 0 ? <ul>
+              {selectedDates.length !== 0 && onBtnClicked === true ? <ul>
                 {selectedDates.map((date) => (
                   <li>{date.toString()}</li>
                 )) 

@@ -39,7 +39,7 @@ const Rota = () => {
             <h1 className='text-[34px] font-semibold'>Criar nova escala</h1>
             <div className="names">
               <h4>Cadastrar nomes</h4>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#namesModal">
+              <button type="button" data-te-toggle="modal" data-te-target="#namesModal">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -58,7 +58,7 @@ const Rota = () => {
             </div>
             <div className="names">
               <h4>Selecionar datas</h4>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#datesModal">
+              <button type="button" data-te-toggle="modal" data-te-target="#datesModal">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -79,7 +79,7 @@ const Rota = () => {
             <button id="btnRota">Criar nova escala</button>
           </div>
           <NamesModal />
-          <DatesModal  setSelectedDates={setSelectedDates} onSelectedDates={selectedDates} onBtnClicked={setOnBtnClicked}/>
+          <DatesModal  id="datesModal" setSelectedDates={setSelectedDates} onSelectedDates={selectedDates} setOnBtnClicked={setOnBtnClicked}/>
           <div className="grid grid-cols-2 divide-x-2">
             <div className="pr-[20px]">
               <h1 className='text-[30px]	font-semibold'>Nomes cadastrados</h1>
@@ -93,7 +93,7 @@ const Rota = () => {
               <h1 className='text-[30px]	font-semibold'>Datas selecionadas</h1>
               {selectedDates.length !== 0 && onBtnClicked === true ? <ul>
                 {selectedDates.map((date) => (
-                  <li>{date.toString()}</li>
+                  <li key={date}>{date.toString()}</li>
                 )) 
 
                 }

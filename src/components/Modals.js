@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import ReactDOM from "react-dom";
-import * as te from 'tw-elements';
+import { /* useEffect, useRef, */ useState } from "react";
+/* import ReactDOM from "react-dom";
+import * as te from 'tw-elements'; */
 import CalendarComponent from "./CalendarComponent";
 
 export const NamesModal = () => {
@@ -60,25 +60,24 @@ export const NamesModal = () => {
 };
 
 export const DatesModal = ({
-  setSelectedDates,
-  onSelectedDates,
-  setOnBtnClicked,
+  setGetSelectedDates,
 }) => {
 
   const [isOpen, setIsOpen] = useState(false)
+  const [selectedDates, setSelectedDates] = useState([])
+
 
   const handleCloseModal = () => {
     setIsOpen(false)
   }
 
   const onClickButton = () => {
-    if (onSelectedDates.length !== 0) {
-      setOnBtnClicked(true);
+    
+    if (selectedDates.length !== 0) {
+      setGetSelectedDates(selectedDates)
       handleCloseModal()
-     
     } else {
       alert("Selecione alguma data");
-      setOnBtnClicked(false);
     }
   };
 

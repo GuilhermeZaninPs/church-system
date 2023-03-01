@@ -71,10 +71,6 @@ export const DatesModal = ({
     setIsOpen(false)
   }
 
-  /* const handleOpenModal = () => {
-    setIsOpen(true)
-  } */
-
   const onClickButton = () => {
     if (onSelectedDates.length !== 0) {
       setOnBtnClicked(true);
